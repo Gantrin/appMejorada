@@ -23,14 +23,14 @@ const Login = () => {
             </Text>
             <View style={{marginTop:40}}>
                 <TextInput
-                style={styles.TextInput}
+                style={styles.textInput}
                 placeholder='Email'
                 onChangeText={(email) => setEmail(email) }
                 autoCapitalize='none'
                 autoCorrect={false}
                 />
                 <TextInput
-                style={styles.TextInput}
+                style={styles.textInput}
                 placeholder='Password'
                 onChangeText={(password) => setPassword(password) }
                 autoCapitalize='none'

@@ -36,7 +36,7 @@ function onAuthStateChanged(user){
         name="Login"
         component={Login}
         options={{
-          headerTitle: () => <Header name="Test?"/>,
+          headerTitle: () => <Header name="Login"/>,
           headerStyle: {
             height:50,
             borderBottomLeftRadius:50,
@@ -51,7 +51,7 @@ function onAuthStateChanged(user){
         name="Registration"
         component={Registration}
         options={{
-          headerTitle: () => <Header name="Test?"/>,
+          headerTitle: () => <Header name="Registration"/>,
           headerStyle: {
             height:50,
             borderBottomLeftRadius:50,

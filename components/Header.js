@@ -3,8 +3,12 @@ import React from 'react'
 
 const Header = (props) => {
     return (
-        <View style={{marginLeft:15}}>
-            <Text style={{fontWeight:'bold',fontSize:28}}>
+        <View style={{ 
+            alignItems:'center',
+            justifyContent:'center',
+            marginLeft:15}}
+        >
+            <Text style={{fontWeight:'bold',fontSize:25}}>
                 {props.name}
             </Text>
         </View>
