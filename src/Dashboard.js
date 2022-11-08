@@ -3,8 +3,17 @@ import React, {useState, useEffect} from 'react'
 import firebase from '../config.js';
 
 const Dashboard = () => {
-
     const [name, setName] = useState('')
+
+//change password
+const changePassword = () => {
+    firebase.auth().sendPasswordResetEmail(firebase.auth().currentUser.email)
+    .then(() => {
+        alert("Password reset email sent")
+    }).catch((error) => {
+        alert(error)
+    })
+}
 
     useEffect(() => {
             firebase.firestore().collection('users')
@@ -31,6 +40,16 @@ const Dashboard = () => {
                         Log Out
                     </Text>
                 </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => { 
+                        changePassword() 
+                    }}
+                    style={styles.button}
+                >
+                    <Text style={{fontSize:22,fontWeight:'bold'}}>
+                        Reset Password
+                    </Text>
+                </TouchableOpacity>                
             </SafeAreaView>
         )
     }
