@@ -1,7 +1,8 @@
-import {View, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image} from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import firebase from '../config.js';
+import 'expo-dev-client';
 
 const Login = () => {
     const navigation = useNavigation()
@@ -64,7 +65,7 @@ const Login = () => {
                 style={{marginTop:20}}
             >
                 <Text style={{fontWeight:'bold',fontSize:16}}>Forget password??</Text>
-            </TouchableOpacity>            
+            </TouchableOpacity>
         </View>
     )
 

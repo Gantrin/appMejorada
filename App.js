@@ -7,6 +7,7 @@ import firebase from './config.js';
 import Login from './src/Login.js';
 import Registration from './src/Registration';
 import Dashboard from './src/Dashboard.js';
+import List from './src/List.js';
 import Header from './components/Header.js';
 //import { Stack } from '@react-navigation/stack';
 
@@ -83,6 +84,21 @@ function onAuthStateChanged(user){
           }
         }}
         />
+      <Stack.Screen 
+        name="List"
+        component={List}
+        options={{
+          headerTitle: () => <Header name="List"/>,
+          headerStyle: {
+            height:50,
+            borderBottomLeftRadius:50,
+            borderBottomRightRadius:50,
+            backgroundColor:"#00e4d0",
+            shadowColor:"#000",
+            elevation:25,
+          }
+        }}
+        />        
     </Stack.Navigator>
   );
 }

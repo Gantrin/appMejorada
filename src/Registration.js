@@ -8,8 +8,9 @@ const Registration = () => {
     const [password, setPassword] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('') 
+    const [phone, setPhone] = useState('')     
     
-    const registerUser = async (email, password, firstName, lastName) => {
+    const registerUser = async (email, password, firstName, lastName, phone) => {
         await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
             firebase.auth().currentUser.sendEmailVerification({
@@ -28,6 +29,7 @@ const Registration = () => {
                     firstName,
                     lastName,
                     email,
+                    phone,
                 })
             })
             .catch((error) => {
@@ -54,7 +56,7 @@ const Registration = () => {
             <TextInput
                 style={styles.textInput}
                 placeholder='Last Name'
-                onChangeText={(firstName) => setLastName(lastName) }
+                onChangeText={(lastName) => setLastName(lastName) }
                 autoCapitalize='none'
                 autoCorrect={false}
                 />
@@ -68,6 +70,14 @@ const Registration = () => {
                 />
             <TextInput
                 style={styles.textInput}
+                placeholder='Phone'
+                onChangeText={(phone) => setPhone(phone) }
+                autoCapitalize='none'
+                autoCorrect={false}
+                keyboardType='phone-pad'
+                />
+            <TextInput
+                style={styles.textInput}
                 placeholder='Password'
                 onChangeText={(password) => setPassword(password) }
                 autoCapitalize='none'
@@ -76,7 +86,7 @@ const Registration = () => {
                 />
             </View>
             <TouchableOpacity
-                onPress={ () => registerUser(email, password, firstName, lastName) }
+                onPress={ () => registerUser(email, password, firstName, lastName, phone) }
                 style={styles.button}
             >
                 <Text style={{fontWeight:'bold',fontSize:22}}>Register</Text>
